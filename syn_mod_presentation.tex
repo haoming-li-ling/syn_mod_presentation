@@ -140,16 +140,22 @@
 \section{SBCG (a dialect of HPSG)}
 \label{sec:sbcg_a_dialect_of_hpsg}
 
+\ex. Trump seems like he disappeared.
 
+The SBCG analysis of copy-raising involves a lexical rule.
 
-\avm{
+The output of the lexical rule should provide the following constraint:
+\ex. \avm{
   [ mtr & [arg-st <NP\(_i\), S[mrkg \type{as-if}, syn|xarg NP[pron]\(_i\)]>] ]
 }
+
+This says that the subject of the copy-raising predicate must be co-indexed with a pronoun in the external argument position of the complement of the predicate, and the predicate must be marked as \avm{\type{as-if}}.
 
 The \textsc{xarg} feature talks about the external argument, like \textsc{spr} in HPSG; however, \textsc{xarg} is different from \textsc{spr} in that it is visible even after the merger with the external argument.
 
 The \textsc{val(ence)} feature is like \textsc{arg-st} in HPSG, but with the difference that \textsc{arg-st} can contain `extracted' or unexpressed arguments, \textsc{val} does not.
-
+\emph{Like} receives its own lexical entry, requiring that the clausal complement that it takes is finite, and that the resulting node is marked as \avm{\type{as-if}}.
+\ex. 
 \avm{
   [
     form & <\type{like}> \\
@@ -184,10 +190,9 @@ The \textsc{val(ence)} feature is like \textsc{arg-st} in HPSG, but with the dif
 }
 
 
-The following is a lexical rule in SBCG, another core of the analysis.
-\avm{\(X\)! [A]} and \avm{\(X\):[B]} indicate that \avm{[A]} and \avm{[B]} are identical in all respects in which they are not shown to differ.
+The following is a lexical rule in SBCG, the core of the analysis.
 
-\avm{
+\ex. \avm{
   [
     mtr & \(X\)! [
       syn & [
@@ -218,6 +223,7 @@ The following is a lexical rule in SBCG, another core of the analysis.
   ]
 }
 
+\avm{\(X\)! [A]} and \avm{\(X\):[B]} indicate that \avm{[A]} and \avm{[B]} are identical in all respects in which they are not shown to differ.
 From a general perception predicate, one is able to derive a copy-raising predicate.
 
 Semantically, copy-raising predicates involve a seeming event \(e\), and an experiencer \(j\).
@@ -226,7 +232,8 @@ Syntactically, copy-raising predicates requires a finite complement clause that 
 
 \ex. Trump looks like he disappeared.
 
-\scalebox{0.8}{\begin{forest}
+The tree for \Last:
+\ex. \scalebox{0.8}{\begin{forest}
   for tree={fit=tight}
   [\avm{[
         form & <\type{trump,looks,like,he,disappeared}> \\
@@ -347,13 +354,14 @@ Regular raising is simply achieved through structure sharing between the matrix 
   \glft `The children seem to be doing well' //
 \endgl
 
-Relevant features in the lexical entry for the raising predicate \emph{deher}:
+Relevant parts in the lexical entry for the raising predicate \emph{deher}:
 \ex.  \begin{align*}
   (\uparrow \textsc{pred}) = \left\langle \textsc{xcomp} \right\rangle \textsc{subj} \\
   ((\uparrow \textsc{xcomp compform} = \textsc{li})) \\
   (\uparrow \textsc{subj}) = (\uparrow \textsc{xcomp subj}) \\
 \end{align*}
 
+The \(f\)-structure:
 \ex. \avm{[
     pred & `\emph{jidhru} <xcomp>\textsc{subj}' \\
     subj & \1 [
